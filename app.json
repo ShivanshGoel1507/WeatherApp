@@ -23,7 +23,10 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.coforge.WeatherApp",
+      "versionCode": 1,
+      "permissions":["Location"]
     },
     "web": {
       "favicon": "./assets/favicon.png"
