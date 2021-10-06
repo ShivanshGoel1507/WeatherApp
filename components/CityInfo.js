@@ -13,25 +13,26 @@ const img = require('../assets/images.jpg')
 function CityInfo({route}) {
   const [data,setData] = useState({});
 
-  /* useEffect(()=>{
+   useEffect(()=>{
     navigator.geolocation.getCurrentPosition((success)=>{
    
       let {latitude,longitude}=success.coords;
 
-       fetchdata(latitude,longitude)
+       fetchdata(route)
   }, (err) =>{
     if(err){
       fetchdata("28.9845","77.7064")
     }
   }
   )
-},[]) */
+},[]) 
 
-const fetchdata = ({route}) =>{
+
+const fetchdata = (route) =>{
   
 
-  fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${route.latitude}&lon=${route.longitude}&exclude=hourly,minutely&units=metric&appid=${API_KEY}`).then(res => res.json()).then(data => {
-      console.log(data);
+  fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${route.params.latitude}&lon=${route.params.longitude}&exclude=hourly,minutely&units=metric&appid=${API_KEY}`).then(res => res.json()).then(data => {
+      console.log(route.params.latitude);
       setData(data);
      
     }
